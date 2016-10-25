@@ -23,7 +23,7 @@ fdt set /chosen \#size-cells <1>
 fdt mknod /chosen module@0
 fdt set /chosen/module@0 compatible "xen,linux-zimage" "xen,multiboot-module"
 fdt set /chosen/module@0 reg <${kernel_addr_r} 0x${filesize} >
-fdt set /chosen/module@0 bootargs "modules=loop,squashfs,sd-mod,usb-storage clk_ignore_unused rootflags=size=128M"
+fdt set /chosen/module@0 bootargs "modules=loop,squashfs,sd-mod,usb-storage clk_ignore_unused rootflags=size=512M"
 fdt set /chosen xen,xen-bootargs "conswitch=x dom0_mem=256M dtuart=/soc@01c00000/serial@01c28000"
 
 load mmc 0 ${ramdisk_addr_r} /boot/initramfs-grsec
